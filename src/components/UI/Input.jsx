@@ -21,7 +21,7 @@ export const Input = ({ onAddTask }) => {
             value={inputValue} 
             onChange={handleSubmit}
             onKeyDown={handleKeyDown}
-            className='p-2 m-1 bg-white rounded-md border-gray-300 text-black inputField'
+            className='p-2 m-5 bg-white rounded-md border-gray-300 text-black inputField'
         />
         <button 
             onClick={() => onAddTask(inputValue)} 

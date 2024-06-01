@@ -36,13 +36,17 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-col justify-start h-full w-full">
-        <Heading title="Your todos ✅" />
-        <Input onAddTask={(title) => setTasks([...tasks, { id: tasks.length + 1, title }])} />
-        <div className="p-4">
-          <DndContext collisionDetection={closestCorners} onDragEnd={handleDragEnd} sensors={sensors}>
-            <Column tasks={tasks} />
-          </DndContext>
+      <div className='flex flex-col h-full w-full'>
+        <div className='relative h-20'>
+          <Heading title="Your todos ✅" />
+        </div>
+        <div className='relative flex-grow overflow-auto p-4'>
+          <Input onAddTask={(title) => setTasks([...tasks, { id: tasks.length + 1, title }])} />
+          <div className="w-full max-w-full">
+            <DndContext collisionDetection={closestCorners} onDragEnd={handleDragEnd} sensors={sensors}>
+              <Column tasks={tasks} />
+            </DndContext>
+          </div>
         </div>
       </div>
     </>
